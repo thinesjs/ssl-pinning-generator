@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules/
+node_modules*/
+
+# Output
+dist/
+dist/*
+
+# Secrets
+ssl-pinning
+ssl-public.pem
+ssl-pinning-config.json
+*.pem
