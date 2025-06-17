@@ -13,6 +13,7 @@ certs/*
 ssl-pinning
 ssl-public.pem
 ssl-pinning-config.json
+ssl-pinning-*.json
 ssl-private.json
 *.pem
 .DS_Store
