@@ -10,7 +10,7 @@
     "generate:new-ssl-hashes": "npm run build && scripts/generate_ssl_hashes.sh",
     "read:ssl-config": "npm run build && node dist/index.js read",
     "export:ssl-config": "npm run build && node dist/index.js export",
-    "generate:ssl-config": "npm run build && npm start",
+    "generate": "npm run generate:new-ssl-hashes && npm run build && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "thinesjs",

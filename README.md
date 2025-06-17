@@ -83,7 +83,7 @@ npm run read:ssl
 ```
 
 This will:
-1. Fetch the encrypted SSL pinning configuration from `https://assets.moneymatch.co/certs/ssl-pinning`
+1. Fetch the encrypted SSL pinning configuration from `https://assets.example.com/certs/ssl-pinning`
 2. Decrypt it using the RSA private key from `ssl-private.pem`
 3. Display the decrypted JSON configuration in the console
 
@@ -98,7 +98,7 @@ npm run export:ssl
 ```
 
 This will:
-1. Fetch the encrypted SSL pinning configuration from `https://assets.moneymatch.co/certs/ssl-pinning`
+1. Fetch the encrypted SSL pinning configuration from `https://assets.example.com/certs/ssl-pinning`
 2. Decrypt it using the RSA private key from `ssl-private.json`
 3. Save the decrypted JSON configuration to `ssl-pinning-config.json`
 4. Display the configuration in the console for verification
@@ -141,18 +141,18 @@ Place your SSL certificates in the `/certs` directory following this structure:
 
 ```
 certs/
-├── accounts_moneymatch_co/
-│   ├── accounts_moneymatch_co.crt        # Leaf/server certificate
-│   └── accounts_moneymatch_co.ca-bundle  # Intermediate and root certificates
-├── transfer_moneymatch_co/
-│   ├── transfer_moneymatch_co.crt        # Leaf/server certificate
-│   └── transfer_moneymatch_co.ca-bundle  # Intermediate and root certificates
+├── accounts_example_com/
+│   ├── accounts_example_com.crt        # Leaf/server certificate
+│   └── accounts_example_com.ca-bundle  # Intermediate and root certificates
+├── transfer_example_com/
+│   ├── transfer_example_com.crt        # Leaf/server certificate
+│   └── transfer_example_com.ca-bundle  # Intermediate and root certificates
 └── {domain_with_underscores}/
     ├── {domain_with_underscores}.crt
     └── {domain_with_underscores}.ca-bundle
 ```
 
-**Note**: Domain names should use underscores instead of dots in folder and file names (e.g., `accounts.moneymatch.co` becomes `accounts_moneymatch_co`).
+**Note**: Domain names should use underscores instead of dots in folder and file names (e.g., `accounts.example.com` becomes `accounts_example_com`).
 
 #### How the Script Works
 
@@ -168,7 +168,7 @@ The script:
 
 For each domain, the script outputs:
 ```
-accounts.moneymatch.co:
+accounts.example.com:
 1. qhTtMzlmLJregAc7uDRRNrcEsIAe1iYn2gb9brfCcmE= 
 2. NYbU7PBwV4y9J67c4guWTki8FJ+uudrXL0a4V4aRcrg= [BACKUP]
 3. 2qkGb+4ldSHX4Z6slboc9d8oF4g7jaAjClvNJARkiTE= [BACKUP]
@@ -178,20 +178,20 @@ The first hash is from the leaf certificate, while subsequent hashes marked as `
 
 ## Current Configuration
 
-The tool is currently configured for MoneyMatch domains across different regions:
+The tool is currently configured for example domains across different regions:
 
-- `accounts.moneymatch.co`
-- `auth.moneymatch.co`
-- `auth.moneymatch.co.nz`
-- `auth.moneymatch.com.au`
-- `auth.moneymatch.com.bn`
-- `auth.moneymatch.sg`
-- `compliance.moneymatch.co`
-- `moneymatch.co.nz`
-- `moneymatch.com.au`
-- `moneymatch.com.bn`
-- `moneymatch.sg`
-- `transfer.moneymatch.co`
+- `accounts.example.com`
+- `auth.example.com`
+- `auth.example.com.nz`
+- `auth.example.com.au`
+- `auth.example.com.bn`
+- `auth.example.sg`
+- `compliance.example.com`
+- `example.com.nz`
+- `example.com.au`
+- `example.com.bn`
+- `example.sg`
+- `transfer.example.com`
 
 
 
