@@ -1,11 +1,16 @@
 {
   "name": "ssl-pinning-generator",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "generate": "npm run build && npm start",
+    "fetch:ssl-hashes": "npm run build && scripts/get_ssl_hashes.sh",
+    "validate:ssl-hashes": "npm run build && scripts/validate_ssl_hashes.sh",
+    "generate:new-ssl-hashes": "npm run build && scripts/generate_ssl_hashes.sh",
+    "read:ssl-config": "npm run build && node dist/index.js read",
+    "export:ssl-config": "npm run build && node dist/index.js export",
+    "generate:ssl-config": "npm run build && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "thinesjs",
@@ -18,5 +23,6 @@
   "dependencies": {
     "node-jose": "^2.2.0",
     "typescript": "^5.8.2"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
