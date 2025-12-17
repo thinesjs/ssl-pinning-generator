@@ -4,7 +4,7 @@ A Node.js/TypeScript tool for generating encrypted SSL certificate pinning confi
 
 ## Overview
 
-This tool reads SSL certificate pinning configurations from a JSON file, encrypts them using a public key, and outputs an encrypted file that can be securely distributed to client applications. It's particularly useful for mobile app developers implementing certificate pinning for enhanced security.
+This tool reads SSL certificate pinning configurations from a JSON file, encrypts them using a public key, and outputs an encrypted file that can be securely distributed to client applications. It's particularly useful for mobile app developers implementing certificate pinning for enhanced security. You may need to replace the `example.com` placeholder with your appropriate domain.
 
 ## Installation
 
@@ -176,25 +176,6 @@ accounts.example.com:
 
 The first hash is from the leaf certificate, while subsequent hashes marked as `[BACKUP]` are from intermediate certificates in the chain.
 
-## Current Configuration
-
-The tool is currently configured for example domains across different regions:
-
-- `accounts.example.com`
-- `auth.example.com`
-- `auth.example.com.nz`
-- `auth.example.com.au`
-- `auth.example.com.bn`
-- `auth.example.sg`
-- `compliance.example.com`
-- `example.com.nz`
-- `example.com.au`
-- `example.com.bn`
-- `example.sg`
-- `transfer.example.com`
-
-
-
 ## Output
 
 The tool generates:
@@ -248,11 +229,3 @@ The tool includes comprehensive error handling for:
 - Invalid JSON configuration
 - Encryption failures
 - File I/O errors
-
-## License
-
-ISC
-
-## Author
-
-thinesjs 
